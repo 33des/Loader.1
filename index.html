@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        /* Mengatur dasar halaman gelap */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0b0c;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Latar belakang garis grid halus seperti di gambar */
+        .grid-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 1;
+        }
+
+        /* Kotak UI Utama */
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            background: rgba(20, 20, 22, 0.6);
+            padding: 50px 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        /* Efek lingkaran cahaya di latar belakang */
+        .glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Gaya Teks Utama */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 30px;
+            background: linear-gradient(180deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Garis pembatas tipis */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            margin: 20px 0;
+        }
+
+        /* Gaya Teks Pembuat di Bawah */
+        .footer-text {
+            font-size: 0.9rem;
+            color: #666666;
+            letter-spacing: 1px;
+        }
+
+        .footer-text span {
+            color: #ffffff;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Efek Latar Belakang -->
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+
+    <!-- Konten UI -->
+    <div class="container">
+        <h1>Thank You For Visiting Our Website</h1>
+        <div class="divider"></div>
+        <div class="footer-text">made by <span>IndraTheGreat</span></div>
+    </div>
+
+</body>
+</html>
