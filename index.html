@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You</title>
+    <title>In Progress</title>
     <style>
         /* Mengatur dasar halaman gelap */
         body {
@@ -25,8 +25,8 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
             background-size: 40px 40px;
             z-index: 1;
         }
@@ -36,57 +36,89 @@
             position: relative;
             z-index: 2;
             text-align: center;
-            background: rgba(20, 20, 22, 0.6);
+            background: rgba(18, 18, 20, 0.4);
             padding: 50px 40px;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            max-width: 500px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            max-width: 520px;
             width: 90%;
         }
 
-        /* Efek lingkaran cahaya di latar belakang */
+        /* Efek lingkaran cahaya redup di belakang kotak */
         .glow {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
             z-index: 1;
             pointer-events: none;
         }
 
         /* Gaya Teks Utama */
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 600;
             letter-spacing: -0.5px;
-            margin-bottom: 30px;
+            margin: 0 0 15px 0;
             background: linear-gradient(180deg, #ffffff 0%, #a3a3a3 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        /* Gaya Teks Tambahan (Status Progres) */
+        .status-text {
+            font-size: 1.1rem;
+            color: #8a8a93;
+            margin-bottom: 35px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Animasi titik berkedip kecil untuk status online/proses */
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #30d158; /* Warna hijau indikator */
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #30d158;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
         /* Garis pembatas tipis */
         .divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            margin: 20px 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+            margin: 25px 0;
         }
 
         /* Gaya Teks Pembuat di Bawah */
         .footer-text {
-            font-size: 0.9rem;
-            color: #666666;
+            font-size: 0.85rem;
+            color: #52525b;
             letter-spacing: 1px;
+            text-transform: lowercase;
         }
 
         .footer-text span {
-            color: #ffffff;
+            color: #a1a1aa;
             font-weight: 500;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -99,6 +131,10 @@
     <!-- Konten UI -->
     <div class="container">
         <h1>Thank You For Visiting Our Website</h1>
+        <div class="status-text">
+            <span class="status-dot"></span>
+            The website is currently in progress
+        </div>
         <div class="divider"></div>
         <div class="footer-text">made by <span>IndraTheGreat</span></div>
     </div>
